@@ -63,8 +63,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CSCodeGenerator.cs" />
+    <Compile Include="CSTemplateParser.cs" />
+    <Compile Include="Node.cs" />
+    <Compile Include="NodeType.cs" />
+    <Compile Include="Parse.cs" />
+    <Compile Include="ParseResult.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Razor.cs" />
+    <Compile Include="ValidationError.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
