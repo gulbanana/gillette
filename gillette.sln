@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sample-site", "gillette\sam
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Gillette.Test", "gillette.Tests\Gillette.Test.vbproj", "{3BFC7985-57C6-4849-9B34-1C5D0DF048B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gillette.Core", "Gillette.Core\Gillette.Core.csproj", "{4DFD9DF6-7F04-42C4-9FC2-A2F4252A6DF7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gillette", "Gillette.Core\Gillette.csproj", "{4DFD9DF6-7F04-42C4-9FC2-A2F4252A6DF7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -7,8 +7,8 @@
     <ProjectGuid>{4DFD9DF6-7F04-42C4-9FC2-A2F4252A6DF7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Gillette.Core</RootNamespace>
-    <AssemblyName>Gillette.Core</AssemblyName>
+    <RootNamespace>Gillette</RootNamespace>
+    <AssemblyName>Gillette</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

@@ -75,9 +75,9 @@
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.1.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Gillette.Core\Gillette.Core.csproj">
+    <ProjectReference Include="..\Gillette.Core\Gillette.csproj">
       <Project>{4dfd9df6-7f04-42c4-9fc2-a2f4252a6df7}</Project>
-      <Name>Gillette.Core</Name>
+      <Name>Gillette</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
