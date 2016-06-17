@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Gillette.Core")]
+[assembly: AssemblyTitle("gillette")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Gillette.Core")]
+[assembly: AssemblyProduct("gillette")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("4dfd9df6-7f04-42c4-9fc2-a2f4252a6df7")]
+[assembly: Guid("a1116e7c-da35-4978-b4a5-3e1a4ec798d2")]
 
 // Version information for an assembly consists of the following four values:
 //

@@ -21,7 +21,10 @@ namespace Gillette
             var gilletteLocation = Path.GetDirectoryName(typeof(Razor).Assembly.Location);
             var gilletteRefs = Directory.EnumerateFiles(gilletteLocation, "*.dll");
 
-            _CSRefs = netRefs.Concat(gilletteRefs).Select(r => MetadataReference.CreateFromFile(r)).ToList();
+            var exe = Assembly.GetEntryAssembly();
+            var exeRefs = (exe != null) ? new[] { exe?.Location } : new string[] { };
+
+            _CSRefs = netRefs.Concat(gilletteRefs).Concat(exeRefs).Select(r => MetadataReference.CreateFromFile(r)).ToList();
             _CSOpts = new CSharpCompilationOptions(OutputKind.DynamicallyLinkedLibrary);
         }
 
