@@ -1,4 +1,5 @@
-`./gilette.exe <viewmodels> <reports>`
+*gilette: self-generating html sites*
+
 
 Copyright (C) 2016  Thomas Castiglione
 
