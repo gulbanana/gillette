@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Linq;
-using static gillette.Parse;
+using static Gillette.Parse;
 
-namespace gillette
+namespace Gillette
 {
     /// <summary>
     /// Parses a Razor-like language, which can detect and special-case RTF rather than HTML

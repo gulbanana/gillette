@@ -1,4 +1,4 @@
-﻿namespace gillette
+﻿namespace Gillette
 {
     internal sealed class ParseResult
     {

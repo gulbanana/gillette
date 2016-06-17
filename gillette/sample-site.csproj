@@ -7,8 +7,8 @@
     <ProjectGuid>{A1116E7C-DA35-4978-B4A5-3E1A4EC798D2}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>gillette</RootNamespace>
-    <AssemblyName>gillette</AssemblyName>
+    <RootNamespace>sample</RootNamespace>
+    <AssemblyName>sample-site</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -63,16 +63,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CSCodeGenerator.cs" />
-    <Compile Include="CSTemplateParser.cs" />
-    <Compile Include="Node.cs" />
-    <Compile Include="NodeType.cs" />
-    <Compile Include="Parse.cs" />
-    <Compile Include="ParseResult.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Razor.cs" />
-    <Compile Include="ValidationError.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -81,6 +73,12 @@
   <ItemGroup>
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.1.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll" />
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.1.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Gillette.Core\Gillette.Core.csproj">
+      <Project>{4dfd9df6-7f04-42c4-9fc2-a2f4252a6df7}</Project>
+      <Name>Gillette.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

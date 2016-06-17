@@ -1,6 +1,6 @@
 ﻿using Microsoft.CodeAnalysis;
 
-namespace gillette
+namespace Gillette
 {
     public sealed class ValidationError
     {

@@ -121,9 +121,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\gillette\gillette.csproj">
-      <Project>{a1116e7c-da35-4978-b4a5-3e1a4ec798d2}</Project>
-      <Name>gillette</Name>
+    <ProjectReference Include="..\Gillette.Core\Gillette.Core.csproj">
+      <Project>{4dfd9df6-7f04-42c4-9fc2-a2f4252a6df7}</Project>
+      <Name>Gillette.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

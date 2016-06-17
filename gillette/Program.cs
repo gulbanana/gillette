@@ -1,4 +1,4 @@
-﻿namespace gillette
+﻿namespace sample
 {
     class Program
     {

@@ -1,9 +1,4 @@
-﻿Imports System.Text
-Imports System.Threading.Tasks
-Imports Microsoft.VisualStudio.TestTools.UnitTesting
-Imports The.Reports
-
-<TestClass> Public Class SyntaxTests
+﻿<TestClass> Public Class SyntaxTests
     Public Class SmallModel
         Property Foo As Integer
     End Class

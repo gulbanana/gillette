@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-namespace gillette
+namespace Gillette
 {
     internal delegate ParseResult Parser(string input);
 
