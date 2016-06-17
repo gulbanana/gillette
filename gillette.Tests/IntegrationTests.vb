@@ -65,4 +65,9 @@ Public Class IntegrationTests
         Dim code = Razor.Precompile(Of LargeModel)(<xml>@Model.Foo</xml>.Value)
         Assert.IsTrue(code.Contains("return builder"))
     End Sub
+
+    <TestMethod> Public Sub IntegrationGenerate()
+        Dim html = Razor.Generate(<xml>@Model.Foo</xml>.Value, New LargeModel With {.Foo = 5})
+        Assert.IsTrue(html.Contains("5"))
+    End Sub
 End Class
