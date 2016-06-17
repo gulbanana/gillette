@@ -74,17 +74,7 @@
         Assert.AreEqual("1", report)
     End Sub
 
-    <TestMethod> Public Sub SyntaxExpressionPrefix()
-        Dim model = New LargeModel With {.Foo = "0", .Bar = New SmallModel With {.Foo = 1}}
-
-        Dim report = Razor.Generate(<xml>@Model.Bar.Foo.ToString()\rtf</xml>.Value, model)
-        Assert.AreEqual("1\rtf", report)
-
-        report = Razor.Generate(<xml>@Model.Bar.Foo.ToString() \rtf</xml>.Value, model)
-        Assert.AreEqual("1 \rtf", report)
-    End Sub
-
-    <TestMethod> Public Sub SyntaxExpressionPostfix()
+    <TestMethod> Public Sub SyntaxExpressionPostfixRTF()
         Dim model = New LargeModel With {.Foo = "0", .Bar = New SmallModel With {.Foo = 1}}
 
         Dim report = Razor.Generate(<xml>\rtf@Model.Bar.Foo.ToString()</xml>.Value, model)
@@ -94,14 +84,34 @@
         Assert.AreEqual("\rtf 1", report)
     End Sub
 
-    <TestMethod> Public Sub SyntaxExpressionInfix()
+    <TestMethod> Public Sub SyntaxExpressionInfixRTF()
         Dim model = New LargeModel With {.Foo = "0", .Bar = New SmallModel With {.Foo = 1}}
 
-        Dim report = Razor.Generate(<xml>\rtf@Model.Bar.Foo.ToString()\rtf</xml>.Value, model)
-        Assert.AreEqual("\rtf1\rtf", report)
+        Dim report = Razor.Generate(<xml>{\rtf@Model.Bar.Foo.ToString()\rtf</xml>.Value, model)
+        Assert.AreEqual("{\rtf1\rtf", report)
 
-        report = Razor.Generate(<xml>\rtf @Model.Bar.Foo.ToString() \rtf</xml>.Value, model)
-        Assert.AreEqual("\rtf 1 \rtf", report)
+        report = Razor.Generate(<xml>{\rtf @Model.Bar.Foo.ToString() \rtf</xml>.Value, model)
+        Assert.AreEqual("{\rtf 1 \rtf", report)
+    End Sub
+
+    <TestMethod> Public Sub SyntaxExpressionInfixTag()
+        Dim model = New LargeModel With {.Foo = "0", .Bar = New SmallModel With {.Foo = 1}}
+
+        Dim report = Razor.Generate("<html>@Model.Bar.Foo.ToString()</html>", model)
+        Assert.AreEqual("<html>1</html>", report)
+
+        report = Razor.Generate("<html> @Model.Bar.Foo.ToString() </html>", model)
+        Assert.AreEqual("<html> 1 </html>", report)
+    End Sub
+
+    <TestMethod> Public Sub SyntaxExpressionInfixAttribute()
+        Dim model = New LargeModel With {.Foo = "0", .Bar = New SmallModel With {.Foo = 1}}
+
+        Dim report = Razor.Generate("<html attr=""@Model.Bar.Foo.ToString()"">", model)
+        Assert.AreEqual("<html attr=""1"">", report)
+
+        report = Razor.Generate("<html attr="" @Model.Bar.Foo.ToString() "">", model)
+        Assert.AreEqual("<html attr="" 1 "">", report)
     End Sub
 
     <TestMethod> Public Sub SyntaxMultipleExpressions()

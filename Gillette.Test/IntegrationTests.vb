@@ -38,7 +38,7 @@ Public Class IntegrationTests
     End Class
 
     <TestMethod> Public Sub IntegrationValidateSuccess()
-        Dim errors = Razor.Validate(Of LargeModel)(<xml>\rtf@Model.Bar.Foo.ToString()\rtf</xml>.Value)
+        Dim errors = Razor.Validate(Of LargeModel)(<xml>{\rtf@Model.Bar.Foo.ToString()\rtf</xml>.Value)
         Assert.IsFalse(errors.Any())
     End Sub
 

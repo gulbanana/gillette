@@ -90,6 +90,15 @@ namespace Gillette
                 (?:                        # any of..
                     ,\s+ |                 # .. either a comma followed by whitespace, or 
                     (?'S'"") .+? (?'-S'"") | # a balanced string, or
+                    [^@ \< "" \s]       # something that isn't html/razor
+                )+
+            ", m => new Node(NodeType.Value, "expression", m.Value));
+
+            var autoclosedExpressionRTF = Custom(@"
+                ^
+                (?:                        # any of..
+                    ,\s+ |                 # .. either a comma followed by whitespace, or 
+                    (?'S'"") .+? (?'-S'"") | # a balanced string, or
                     [^@ \\ \{ \} \s]       # something that isn't rtf/razor
                 )+
             ", m => new Node(NodeType.Value, "expression", m.Value));
@@ -171,7 +180,7 @@ namespace Gillette
             var blockChainRTF = Set("block-chain", Sequence(Enumerable.First, namedBlockRTF, whitespaceRTF));
 
             var code = Any(blockChain, statementBlock, unambiguousExpression, autoclosedExpression);
-            var codeRTF = Any(blockChainRTF, statementBlockRTF, unambiguousExpression, autoclosedExpression);
+            var codeRTF = Any(blockChainRTF, statementBlockRTF, unambiguousExpression, autoclosedExpressionRTF);
 
             var sigil = Term("bare-sigil", @"^@");
 

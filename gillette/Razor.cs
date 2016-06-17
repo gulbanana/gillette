@@ -49,7 +49,7 @@ namespace Gillette
             using (var dllStream = new MemoryStream())
             {
                 var result = compilation.Emit(dllStream);
-                if (!result.Success) throw new Exception("Template compilation failed - use Validate() to find out why.");
+                if (!result.Success) throw new Exception("Template compilation failed - use Validate() for more detail." + Environment.NewLine + result.Diagnostics.FirstOrDefault()?.ToString());
 
                 var templateDLL = Assembly.Load(dllStream.ToArray());
                 var templateType = templateDLL.GetType(typeof(T).Name.Replace("[]", "Array") + "Template");
